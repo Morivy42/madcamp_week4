@@ -27,7 +27,7 @@ public class SquareMove : MonoBehaviour
     {   
 
         // Jump        
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButton("Jump"))
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
@@ -43,11 +43,11 @@ public class SquareMove : MonoBehaviour
         transform.position += move * moveSpeed * Time.deltaTime;
 
         // flip
-        if (moveX > 0)
+        if (moveX < 0)
         {
             sr.flipX = false;
         }
-        else if (moveX < 0)
+        else if (moveX > 0)
         {
             sr.flipX = true;
         }
