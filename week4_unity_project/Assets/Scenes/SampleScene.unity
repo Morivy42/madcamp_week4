@@ -881,7 +881,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1893666863}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1d6439787a5a0db43afa3e9131e15659, type: 3}
   m_Name: 
@@ -898,7 +898,7 @@ GameObject:
   - component: {fileID: 1941614884}
   - component: {fileID: 1941614883}
   - component: {fileID: 1941614885}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}

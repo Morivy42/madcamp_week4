@@ -6,6 +6,7 @@ public class SquareMove : MonoBehaviour
 {
     Rigidbody2D rb;
     SpriteRenderer sr;
+    Animator anim;
 
     [SerializeField]
     private float moveSpeed = 5f;
@@ -20,17 +21,20 @@ public class SquareMove : MonoBehaviour
     private void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
-    {   
-
+    {
         // Jump        
         if (Input.GetButtonDown("Jump"))
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            anim.SetBool("isJumping", true);
         }
+
+
     }
 
     void FixedUpdate()
@@ -50,6 +54,27 @@ public class SquareMove : MonoBehaviour
         else if (moveX > 0)
         {
             sr.flipX = true;
+        }
+
+        if (Mathf.Abs(moveX) < 0.3)
+        {
+            anim.SetBool("isWalking", false);
+        }
+        else
+        {
+            anim.SetBool("isWalking", true);
+        }
+
+        // Debug.DrawRay(rb.position, Vector3.down, new Color(0, 0, 0));
+
+        if (rb.velocity.y < 0)
+        {
+            RaycastHit2D rayHit = Physics2D.Raycast(rb.position, Vector3.down, 1, LayerMask.GetMask("floor"));
+            if (rayHit.collider != null)
+            {
+                if (rayHit.distance < 0.5f)
+                    anim.SetBool("isJumping", false);
+            }
         }
     }
 }
