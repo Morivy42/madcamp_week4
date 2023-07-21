@@ -9,7 +9,6 @@ public class SquareMove : MonoBehaviour
 
     [SerializeField]
     private float moveSpeed = 5f;
-
     private float jumpForce = 5f;
 
     // Start is called before the first frame update
