@@ -27,7 +27,7 @@ public class SquareMove : MonoBehaviour
     {   
 
         // Jump        
-        if (Input.GetButton("Jump"))
+        if (Input.GetButtonDown("Jump"))
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
