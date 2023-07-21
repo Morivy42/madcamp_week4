@@ -27,8 +27,14 @@ public class SquareMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+        {
+            // 아무런 동작을 취하지 않습니다.
+            // 또는 원하는 처리를 수행할 수도 있습니다.
+        }
+
         // Jump        
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             anim.SetBool("isJumping", true);
@@ -39,8 +45,18 @@ public class SquareMove : MonoBehaviour
 
     void FixedUpdate()
     {
-        float moveX = Input.GetAxis("Horizontal");
-        float moveY = Input.GetAxis("Vertical");
+        // float moveX = Input.GetAxis("Horizontal");
+        // float moveY = Input.GetAxis("Vertical");
+        float moveX = 0f;
+
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            moveX = -1f;
+        }
+        else if (Input.GetKey(KeyCode.RightArrow))
+        {
+            moveX = 1f;
+        }
 
         // move
         Vector3 move = new Vector3(moveX, 0, 0);
