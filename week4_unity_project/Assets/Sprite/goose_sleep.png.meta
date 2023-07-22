@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7cb889af1201c434ab55602d81402f85
+guid: 60b2a968367fb7c45a2264c272b982f7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,7 +110,7 @@ TextureImporter:
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 50
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: KakaoTalk_20230721_094525118_0
+      name: goose_sleep_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 96
-        width: 96
-        height: 96
+        y: 264
+        width: 248
+        height: 248
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,41 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3390aac00f0a6e54cb702e6108503de6
-      internalID: -1634717733
+      spriteID: 183113dfd1603414ab2f01f313313e5d
+      internalID: -1535282093
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KakaoTalk_20230721_094525118_1
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 96
-        width: 96
-        height: 96
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 74d3ed9e876a809449b21d55fd9c86aa
-      internalID: -310644824
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: KakaoTalk_20230721_094525118_2
+      name: goose_sleep_1
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 96
-        height: 96
+        y: 8
+        width: 248
+        height: 248
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,29 +171,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 13110d69b5ffeec428593c7c6aa86b84
-      internalID: -1725720486
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: KakaoTalk_20230721_094525118_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 96
-        height: 96
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4c18c122715680846977f2c29da86018
-      internalID: 1462583300
+      spriteID: 8d8ddedd5544c1743a7b58e296271230
+      internalID: 1455633803
       vertices: []
       indices: 
       edges: []
@@ -230,10 +188,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      KakaoTalk_20230721_094525118_0: -1634717733
-      KakaoTalk_20230721_094525118_1: -310644824
-      KakaoTalk_20230721_094525118_2: -1725720486
-      KakaoTalk_20230721_094525118_3: 1462583300
+      goose_sleep_0: -1535282093
+      goose_sleep_1: 1455633803
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
