@@ -7,16 +7,21 @@ public class PinkMove : MonoBehaviour
     Rigidbody2D rb;
     SpriteRenderer sr;
     Animator anim;
+    public GameObject nupjukPink;
+    public GameObject nupjukBlue;
+    private Renderer objectRenderer;
 
     [SerializeField]
     private float moveSpeed = 5f;
     private float jumpForce = 5f;
+    private float doorDistance = 2f;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         // rb.gravityScale = 1f;
+        objectRenderer = GetComponent<Renderer>();
     }
 
     private void Awake()
@@ -28,13 +33,36 @@ public class PinkMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
         // Jump        
-        if (Input.GetKeyDown(KeyCode.W))
+        if (objectRenderer.enabled&&Input.GetKeyDown(KeyCode.W))
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             anim.SetBool("isJumping", true);
+        }
+
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.right, doorDistance, LayerMask.GetMask("floor"));
+        RaycastHit2D hit2 = Physics2D.Raycast(transform.position, Vector3.left, doorDistance, LayerMask.GetMask("floor"));
+
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            if (objectRenderer.enabled == false)
+            {
+                objectRenderer.enabled = true;
+            }
+            else if (hit.collider != null && hit.collider.CompareTag("Door"))
+            {
+                if (hit.distance < 1f)
+                {
+                    objectRenderer.enabled = false;
+                }
+            }
+            else if (hit2.collider != null && hit2.collider.CompareTag("Door"))
+            {
+                if (hit2.distance < 1f)
+                {
+                    objectRenderer.enabled = false;
+                }
+            }
         }
 
     }
@@ -43,11 +71,11 @@ public class PinkMove : MonoBehaviour
     {
         float moveX = 0f;
 
-        if (Input.GetKey(KeyCode.A))
+        if (objectRenderer.enabled&&Input.GetKey(KeyCode.A))
         {
             moveX = -1f;
         }
-        else if (Input.GetKey(KeyCode.D))
+        else if (objectRenderer.enabled&&Input.GetKey(KeyCode.D))
         {
             moveX = 1f;
         }
@@ -79,16 +107,19 @@ public class PinkMove : MonoBehaviour
         if (rb.velocity.y < 0)
         {
             RaycastHit2D rayHit = Physics2D.Raycast(rb.position, Vector3.down, 1, LayerMask.GetMask("floor"));
+            RaycastHit2D rayHit2 = Physics2D.Raycast(rb.position, Vector3.down, 1, LayerMask.GetMask("bluePlayer"));
             if (rayHit.collider != null)
             {
                 if (rayHit.distance < 0.5f)
                     anim.SetBool("isJumping", false);
             }
-            // }
-            // if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
-            // {
-            //     // 아무런 동작을 취하지 않습니다.
-            //     // 또는 원하는 처리를 수행할 수도 있습니다.
+            else if (rayHit2.collider != null)
+            {
+                if (rayHit2.distance < 0.5f)
+                    anim.SetBool("isJumping", false);
+            }
         }
     }
+
+    
 }
