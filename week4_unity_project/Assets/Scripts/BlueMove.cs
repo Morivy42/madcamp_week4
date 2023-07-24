@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SquareMove : MonoBehaviour
+public class BlueMove : MonoBehaviour
 {
     Rigidbody2D rb;
     SpriteRenderer sr;
