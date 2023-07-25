@@ -595,7 +595,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 681835623, guid: 3f754161d41cd3e439f1c8758eecf608, type: 3}
+  m_Sprite: {fileID: 1585241874, guid: 3f754161d41cd3e439f1c8758eecf608, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1023,6 +1023,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49447821a129fa548b3b4548c6cd415b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nupjukPink: {fileID: 0}
+  nupjukBlue: {fileID: 0}
   moveSpeed: 5
 --- !u!95 &1025043793
 Animator:
@@ -2771,4 +2773,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d6439787a5a0db43afa3e9131e15659, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nupjukBlue: {fileID: 0}
   moveSpeed: 12
