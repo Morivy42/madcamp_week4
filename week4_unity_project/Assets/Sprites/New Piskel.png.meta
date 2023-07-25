@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7cb889af1201c434ab55602d81402f85
+guid: 5817e4da05ecfde499729f1e6872ab06
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 50
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: KakaoTalk_20230721_094525118_0
+      name: New Piskel_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 96
-        width: 96
-        height: 96
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3390aac00f0a6e54cb702e6108503de6
-      internalID: -1634717733
+      spriteID: e35660a55fe11aa4494398c9872be077
+      internalID: 1137909951
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KakaoTalk_20230721_094525118_1
+      name: New Piskel_1
       rect:
         serializedVersion: 2
-        x: 96
-        y: 96
-        width: 96
-        height: 96
+        x: 32
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74d3ed9e876a809449b21d55fd9c86aa
-      internalID: -310644824
+      spriteID: bba56e1dd133a874aaf70bd980d8f8b9
+      internalID: -715496808
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KakaoTalk_20230721_094525118_2
+      name: New Piskel_2
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 96
-        height: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,29 +192,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 13110d69b5ffeec428593c7c6aa86b84
-      internalID: -1725720486
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: KakaoTalk_20230721_094525118_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 96
-        height: 96
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4c18c122715680846977f2c29da86018
-      internalID: 1462583300
+      spriteID: 2e94b66f6d6788a44b60d83e5feb8272
+      internalID: 1891724189
       vertices: []
       indices: 
       edges: []
@@ -230,10 +209,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      KakaoTalk_20230721_094525118_0: -1634717733
-      KakaoTalk_20230721_094525118_1: -310644824
-      KakaoTalk_20230721_094525118_2: -1725720486
-      KakaoTalk_20230721_094525118_3: 1462583300
+      New Piskel_0: 1137909951
+      New Piskel_1: -715496808
+      New Piskel_2: 1891724189
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
