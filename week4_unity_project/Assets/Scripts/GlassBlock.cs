@@ -8,6 +8,7 @@ public class GlassBlock : MonoBehaviour
     private Renderer objectRenderer;
     bool playerOn = false;
     bool startTimer = false;
+    bool reCreate = false;
     private float inactiveTimer = 2f;
 
     public float fadeSpeed = 0.5f; // 투명도 조정 속도
@@ -44,10 +45,10 @@ public class GlassBlock : MonoBehaviour
     {
         if ((!startTimer) && playerOn)
         {
-            inactiveTimer = 2f;
+            inactiveTimer = 1.5f;
             startTimer = true;
         }
-        if (startTimer)
+        if (startTimer&&(!reCreate))
         {
             currentAlpha -= fadeSpeed * Time.deltaTime; // 투명도를 감소시킴
 
@@ -66,6 +67,23 @@ public class GlassBlock : MonoBehaviour
             {
                 objectRenderer.enabled = false;
                 boxCollider.enabled = false;
+                inactiveTimer = 1.5f;
+                reCreate = true;
+            }
+        }
+        else if(reCreate){
+            currentAlpha = 1f;
+            Color newColor = originalColor;
+            newColor.a = currentAlpha;
+            spriteRenderer.color = newColor;
+
+            inactiveTimer -= Time.deltaTime;
+            if(inactiveTimer <=0f){
+                objectRenderer.enabled = true;
+                boxCollider.enabled = true;
+                reCreate = false;
+                playerOn = false;
+                startTimer = false;
             }
         }
     }
