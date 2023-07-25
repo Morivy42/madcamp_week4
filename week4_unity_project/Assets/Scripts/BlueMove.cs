@@ -9,6 +9,7 @@ public class BlueMove : MonoBehaviour
     SpriteRenderer sr;
     Animator anim;
     private Renderer objectRenderer;
+    public bool isMovingBlock = false;
 
     [SerializeField]
     private float moveSpeed = 5f;
@@ -31,8 +32,9 @@ public class BlueMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        bool isJumping = anim.GetBool("isJumping");
         // Jump        
-        if (objectRenderer.enabled&&Input.GetKeyDown(KeyCode.UpArrow))
+        if (((!isJumping) && objectRenderer.enabled) && Input.GetKeyDown(KeyCode.UpArrow))
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             anim.SetBool("isJumping", true);
@@ -67,17 +69,26 @@ public class BlueMove : MonoBehaviour
 
     void FixedUpdate()
     {
-        // float moveX = Input.GetAxis("Horizontal");
-        // float moveY = Input.GetAxis("Vertical");
         float moveX = 0f;
-
-        if (objectRenderer.enabled&&Input.GetKey(KeyCode.LeftArrow))
+        isMovingBlock = false;
+        if (objectRenderer.enabled && Input.GetKey(KeyCode.LeftArrow))
         {
             moveX = -1f;
+            RaycastHit2D blockHit = Physics2D.Raycast(rb.position, Vector2.left, (float) 0.6, LayerMask.GetMask("block"));
+            if (blockHit.collider != null)
+            {
+                isMovingBlock = true;
+            }
+
         }
-        else if (objectRenderer.enabled&&Input.GetKey(KeyCode.RightArrow))
+        else if (objectRenderer.enabled && Input.GetKey(KeyCode.RightArrow))
         {
             moveX = 1f;
+            RaycastHit2D blockHit = Physics2D.Raycast(rb.position, Vector2.right, (float) 0.6, LayerMask.GetMask("block"));
+            if (blockHit.collider != null)
+            {
+                isMovingBlock = true;
+            }
         }
 
         // move
@@ -105,18 +116,12 @@ public class BlueMove : MonoBehaviour
 
         // Debug.DrawRay(rb.position, Vector3.down, new Color(255, 0, 0));
 
-        if (rb.velocity.y < 0)
+        if (rb.velocity.y <= 0)
         {
-            RaycastHit2D rayHit = Physics2D.Raycast(rb.position, Vector3.down, 1, LayerMask.GetMask("floor"));
-            RaycastHit2D rayHit2 = Physics2D.Raycast(rb.position, Vector3.down, 1, LayerMask.GetMask("pinkPlayer"));
+            RaycastHit2D rayHit = Physics2D.Raycast(rb.position, Vector3.down, 1, LayerMask.GetMask("floor", "pinkPlayer", "block"));
             if (rayHit.collider != null)
             {
-                if (rayHit.distance < 0.5f)
-                    anim.SetBool("isJumping", false);
-            }
-            else if (rayHit2.collider != null)
-            {
-                if (rayHit2.distance < 0.5f)
+                if (rayHit.distance < 1f)
                     anim.SetBool("isJumping", false);
             }
         }
