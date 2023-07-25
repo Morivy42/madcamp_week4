@@ -21,7 +21,7 @@ public class Raser : MonoBehaviour
     {
         if (!raserHit)
         {
-            RaycastHit2D raycastHit = Physics2D.Raycast(transform.position, transform.up, (float)0.2, LayerMask.GetMask("bluePlayer", "pinkPlayer"));
+            RaycastHit2D raycastHit = Physics2D.Raycast(transform.position, transform.up, 0.2f, LayerMask.GetMask("bluePlayer", "pinkPlayer"));
             if (raycastHit.collider != null)
             {
                 raserHit = true;

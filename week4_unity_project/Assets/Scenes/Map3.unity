@@ -179,7 +179,7 @@ PrefabInstance:
     - target: {fileID: 697611049998448815, guid: 17dd2dd486d0dd54cadde81a5cd8d0fe, type: 3}
       propertyPath: targetObj
       value: 
-      objectReference: {fileID: 1806633937}
+      objectReference: {fileID: 0}
     - target: {fileID: 2546486134562722328, guid: 17dd2dd486d0dd54cadde81a5cd8d0fe, type: 3}
       propertyPath: m_Name
       value: Key
@@ -190,11 +190,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6473737288361270072, guid: 17dd2dd486d0dd54cadde81a5cd8d0fe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.71
+      value: -3.92
       objectReference: {fileID: 0}
     - target: {fileID: 6473737288361270072, guid: 17dd2dd486d0dd54cadde81a5cd8d0fe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.15
+      value: 2.16
       objectReference: {fileID: 0}
     - target: {fileID: 6473737288361270072, guid: 17dd2dd486d0dd54cadde81a5cd8d0fe, type: 3}
       propertyPath: m_LocalPosition.z
@@ -227,6 +227,14 @@ PrefabInstance:
     - target: {fileID: 6473737288361270072, guid: 17dd2dd486d0dd54cadde81a5cd8d0fe, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8864497255787137743, guid: 17dd2dd486d0dd54cadde81a5cd8d0fe, type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8864497255787137743, guid: 17dd2dd486d0dd54cadde81a5cd8d0fe, type: 3}
+      propertyPath: m_Size.y
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -328,7 +336,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3996357975121809832, guid: b49f3e40067476542b00b036f4027fba, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.0800002
+      value: 4.38
       objectReference: {fileID: 0}
     - target: {fileID: 3996357975121809832, guid: b49f3e40067476542b00b036f4027fba, type: 3}
       propertyPath: m_LocalPosition.y
@@ -562,7 +570,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1425187416}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.67, y: 1.81, z: 1}
+  m_LocalPosition: {x: -6.38, y: 1.06, z: 1}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -581,8 +589,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b8cd73cba59712478d9f58e912d254f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nupjukPink: {fileID: 1404501364}
+  nupjukBlue: {fileID: 1806633937}
   player: {fileID: 1806633943}
-  chaseSpeed: 1
+  chaseSpeed: 7
   maxPlayerSpeed: 4
 --- !u!1 &1488396511
 GameObject:
@@ -1291,7 +1301,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8138835035608420077, guid: c08ad86d60cd7aa46be3d8eb73350271, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.95
+      value: 5.51
       objectReference: {fileID: 0}
     - target: {fileID: 8138835035608420077, guid: c08ad86d60cd7aa46be3d8eb73350271, type: 3}
       propertyPath: m_LocalPosition.y

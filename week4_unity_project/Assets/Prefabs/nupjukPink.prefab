@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8041093230051717915}
   m_Layer: 7
   m_Name: nupjukPink
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
