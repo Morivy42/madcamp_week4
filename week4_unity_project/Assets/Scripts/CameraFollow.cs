@@ -5,24 +5,26 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     private float cameraSpeed = 7.0f;
-    private float minX = -13f; 
-    private float maxX = 44f; 
-    private float minY = -2f; 
-    private float maxY = 20f; 
+    public float minX = -4f;
+    public float maxX = 100f;
+    public float minY = 0f;
+    public float maxY = 4f;
 
     public GameObject player;
-    private bool isCameraMoveEnabled = true; 
+    private bool isCameraMoveEnabled = true;
+    void Start(){
+    }
 
     private void Update()
     {
         if (isCameraMoveEnabled)
         {
-            Vector3 dir = player.transform.position - this.transform.position;
-            float clampedX = Mathf.Clamp(dir.x * cameraSpeed * Time.deltaTime, minX, maxX);
-            float clampedY = Mathf.Clamp(dir.y * cameraSpeed * Time.deltaTime, minY, maxY);
 
-            Vector3 moveVector = new Vector3(clampedX, clampedY, 0.0f);
-            this.transform.Translate(moveVector);
+            float clampedX = Mathf.Clamp(player.transform.position.x, minX, maxX);
+            float clampedY = Mathf.Clamp(player.transform.position.y, minY, maxY);
+            Vector3 dir = new Vector3(clampedX-this.transform.position.x, clampedY-this.transform.position.y, 0f);
+            transform.Translate(dir);
+
         }
     }
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PinkMove : MonoBehaviour
 {
@@ -10,7 +11,19 @@ public class PinkMove : MonoBehaviour
     public GameObject nupjukPink;
     public GameObject nupjukBlue;
     private Renderer objectRenderer;
+    private Collider2D myCollider;
     public bool isMovingBlock = false;
+
+    public bool isAlive = true;
+    public Sprite gameoverSprite;
+    private float inactiveTimer = 1f;
+    private float gg_moveSpeed = 14f;
+    private float distance = 4f;
+    private Vector3 startPos;
+    private Vector3 endPos;
+    private bool movingUp = true;
+    public CameraFollow cameraFollow;
+    private bool animStart = false;
 
     [SerializeField]
     private float moveSpeed = 5f;
@@ -23,6 +36,8 @@ public class PinkMove : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         // rb.gravityScale = 1f;
         objectRenderer = GetComponent<Renderer>();
+        myCollider = GetComponent<Collider2D>();
+        inactiveTimer = 1f;
     }
 
     private void Awake()
@@ -36,7 +51,7 @@ public class PinkMove : MonoBehaviour
     {
         bool isJumping = anim.GetBool("isJumping");
         // Jump        
-        if (((!isJumping)&&objectRenderer.enabled)&&Input.GetKeyDown(KeyCode.W))
+        if (((!isJumping) && objectRenderer.enabled) && Input.GetKeyDown(KeyCode.W))
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             anim.SetBool("isJumping", true);
@@ -67,6 +82,54 @@ public class PinkMove : MonoBehaviour
             }
         }
 
+        //game over 시 처리
+        if (!isAlive)
+        {
+            anim.enabled = false;
+            sr.sprite = gameoverSprite;
+            inactiveTimer -= Time.deltaTime;
+
+            if (inactiveTimer <= 0f)
+            {
+                animStart = true;
+                startPos = transform.position;
+                endPos = startPos + Vector3.up * distance;
+                isAlive = true;
+            }
+        }
+        
+            
+        if (animStart)
+        {
+            myCollider.isTrigger = true;
+            cameraFollow.SetCameraMoveEnabled(false);
+            if (movingUp)
+            {
+                gg_moveSpeed = 11f;
+                if (Vector3.Distance(transform.position, endPos) > 0.3f)
+                {
+                    transform.position = Vector3.MoveTowards(transform.position, endPos, gg_moveSpeed * Time.deltaTime);
+                }   
+                else{
+                    movingUp = false;
+                }
+            }
+            else
+            {
+                gg_moveSpeed = 1f;
+                if (Vector3.Distance(transform.position, startPos) > 0.1f){
+                    transform.position = Vector3.MoveTowards(transform.position, startPos, gg_moveSpeed * Time.deltaTime);
+                }
+                else
+                {
+                    animStart = false;
+                    int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+                    SceneManager.LoadScene(currentSceneIndex);
+                }
+            }
+        }
+
+
     }
 
     void FixedUpdate()
@@ -74,19 +137,19 @@ public class PinkMove : MonoBehaviour
         float moveX = 0f;
 
         isMovingBlock = false;
-        if (objectRenderer.enabled&&Input.GetKey(KeyCode.A))
+        if (objectRenderer.enabled && Input.GetKey(KeyCode.A))
         {
             moveX = -1f;
-            RaycastHit2D blockHit = Physics2D.Raycast(rb.position, Vector2.left, (float) 0.6, LayerMask.GetMask("block"));
+            RaycastHit2D blockHit = Physics2D.Raycast(rb.position, Vector2.left, (float)0.6, LayerMask.GetMask("block"));
             if (blockHit.collider != null)
             {
                 isMovingBlock = true;
             }
         }
-        else if (objectRenderer.enabled&&Input.GetKey(KeyCode.D))
+        else if (objectRenderer.enabled && Input.GetKey(KeyCode.D))
         {
             moveX = 1f;
-            RaycastHit2D blockHit = Physics2D.Raycast(rb.position, Vector2.right, (float) 0.6, LayerMask.GetMask("block"));
+            RaycastHit2D blockHit = Physics2D.Raycast(rb.position, Vector2.right, (float)0.6, LayerMask.GetMask("block"));
             if (blockHit.collider != null)
             {
                 isMovingBlock = true;
@@ -126,7 +189,10 @@ public class PinkMove : MonoBehaviour
                     anim.SetBool("isJumping", false);
             }
         }
+        if(transform.position.y<-4.5f){
+            transform.Translate(0f, 15f, 0f);
+        }
     }
 
-    
+
 }
