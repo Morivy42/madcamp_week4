@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b5408e2321b229a4fa227ae5b3a508d5
+guid: 61f697c60b5fc034bbbc905221e53e84
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,107 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: single_floor_left
-      rect:
-        serializedVersion: 2
-        x: 3
-        y: 96
-        width: 29
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4ba152d7fa96435459bcc74a5574f71b
-      internalID: -1304243449
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: single_floor_center
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 96
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c16dbb0d742ea044cbb5b383d7ec76cb
-      internalID: -2048708342
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: single_floor_right
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 96
-        width: 29
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1ba454ad6f4158942920bb2d6fb96766
-      internalID: -773478897
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: floor_top_left
+      name: block_32_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -12, y: 16}
-        - {x: -16, y: 11}
-        - {x: -16, y: -16}
-        - {x: 16, y: -16}
-        - {x: 16, y: 16}
-      physicsShape:
-      - - {x: -12, y: 16}
-        - {x: -16, y: 9}
-        - {x: -16, y: -16}
-        - {x: 16, y: -16}
-        - {x: 16, y: 16}
-      tessellationDetail: 0
-      bones: []
-      spriteID: aa5334085a2d17f428b3b96ccbb04fcc
-      internalID: -1191969095
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: floor_top_center
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 64
-        width: 32
-        height: 32
+        y: 136
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -244,46 +150,83 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8230faabd350bca48ac6d080350cb616
-      internalID: 29422358
+      spriteID: 85287f5a1b237004f96ec1b9078c0570
+      internalID: -1325013422
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: floor_top_right
+      name: block_32_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 64
-        width: 32
-        height: 32
+        x: 128
+        y: 136
+        width: 80
+        height: 120
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -16, y: 16}
-        - {x: -16, y: -16}
-        - {x: 16, y: -16}
-        - {x: 16, y: 12}
-        - {x: 12, y: 16}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 55354c9697513334a91162af76a7ef33
-      internalID: 1153753997
+      spriteID: 52ebc3b0d2a333949b5adfd22893bcb9
+      internalID: -927757789
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: floor_center_left
+      name: block_32_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 136
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13d0b1c307721d5408d06ac04d845e5b
+      internalID: -57777343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: block_32_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 136
+        width: 80
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3ea9d77633185342896c62b9b185402
+      internalID: -1861656249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: block_32_4
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
-        width: 32
-        height: 32
+        y: 16
+        width: 112
+        height: 112
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -291,20 +234,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1223fbc257ff1ce499c745b65551e06d
-      internalID: 1254062008
+      spriteID: 0ae87b2fc27fbd243af6b82ddd1b67ec
+      internalID: -657831826
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: floor_center
+      name: block_32_5
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
-        width: 32
-        height: 32
+        x: 128
+        y: 8
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -312,20 +255,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1f47a24cce120b4f987c986dbf0ca67
-      internalID: 1124456299
+      spriteID: 54e16021d5b94a0429168042237af2e4
+      internalID: -1907713516
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: floor_center_right
+      name: block_32_6
       rect:
         serializedVersion: 2
-        x: 64
-        y: 32
-        width: 32
-        height: 32
+        x: 256
+        y: 8
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -333,46 +276,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c618cb68698e494d9290cae926fad2e
-      internalID: -2024947778
+      spriteID: d9857bb91266ac14fad60432e277eca6
+      internalID: -366604731
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: floor_bottom_left
+      name: block_32_7
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -16, y: 16}
-        - {x: -16, y: -11}
-        - {x: -11, y: -16}
-        - {x: 16, y: -16}
-        - {x: 16, y: 16}
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 34beabee7f777f04a8f68cb3195fe37e
-      internalID: 2057885699
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: floor_bottom_center
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
+        x: 384
+        y: 8
+        width: 120
+        height: 120
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -380,34 +297,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b62e693ce1143a94596260a59772a5fd
-      internalID: 1675235441
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: floor_bottom_right
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline:
-      - - {x: -16, y: 16}
-        - {x: -16, y: -16}
-        - {x: 11, y: -16}
-        - {x: 16, y: -12}
-        - {x: 16, y: 16}
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dab6877d928a9cf429cca45afcafea6d
-      internalID: -976293627
+      spriteID: 357a01d474f94e243ab7611daff75529
+      internalID: 727598349
       vertices: []
       indices: 
       edges: []
@@ -423,18 +314,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      floor_bottom_center: 1675235441
-      floor_bottom_left: 2057885699
-      floor_bottom_right: -976293627
-      floor_center: 1124456299
-      floor_center_left: 1254062008
-      floor_center_right: -2024947778
-      floor_top_center: 29422358
-      floor_top_left: -1191969095
-      floor_top_right: 1153753997
-      single_floor_center: -2048708342
-      single_floor_left: -1304243449
-      single_floor_right: -773478897
+      block_32_0: -1325013422
+      block_32_1: -927757789
+      block_32_2: -57777343
+      block_32_3: -1861656249
+      block_32_4: -657831826
+      block_32_5: -1907713516
+      block_32_6: -366604731
+      block_32_7: 727598349
+      block_32_8: -1678293570
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
