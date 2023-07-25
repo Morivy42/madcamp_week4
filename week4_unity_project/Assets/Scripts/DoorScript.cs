@@ -8,6 +8,8 @@ public class DoorScript : MonoBehaviour
     public GameObject nupjukBlue;
     public GameObject nupjukPink;
     public GameObject Key;
+    // scene 전환을 위한 변수
+    [SerializeField] private string sceneName;
     private Renderer blueRenderer;
     private Renderer pinkRenderer;
     private bool isPlayersInactive = false;
@@ -30,7 +32,7 @@ public class DoorScript : MonoBehaviour
             if (pinkRenderer.enabled == false && blueRenderer.enabled == false)
             {
                 isPlayersInactive = false;
-                SceneManager.LoadScene("SampleScene");
+                SceneManager.LoadScene(sceneName);
             }
 
             if (isPlayersInactive == false && (pinkRenderer.enabled != blueRenderer.enabled))
@@ -49,7 +51,7 @@ public class DoorScript : MonoBehaviour
                 if (inactiveTimer <= 0f)
                 {
                     // 5초가 끝나면 씬 이동
-                    SceneManager.LoadScene("SampleScene");
+                    SceneManager.LoadScene(sceneName);
                 }
             }
         }
