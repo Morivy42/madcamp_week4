@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -144,13 +144,13 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e35660a55fe11aa4494398c9872be077
+      spriteID: 4758b0633c507964fba45ccbc77b1857
       internalID: 1137909951
       vertices: []
       indices: 
@@ -165,20 +165,20 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bba56e1dd133a874aaf70bd980d8f8b9
+      spriteID: 11e53a975962a1f42a52dd5596125166
       internalID: -715496808
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: trafficLight_black
+      name: trafficLight_green_blink
       rect:
         serializedVersion: 2
         x: 0
@@ -186,14 +186,35 @@ TextureImporter:
         width: 32
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e94b66f6d6788a44b60d83e5feb8272
-      internalID: 1891724189
+      spriteID: 22030f54f6054854f9c2ab0d9e80fdcd
+      internalID: -541666913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: trafficLight_red_blink
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 803c61149f33cb645895d6ee2108d4f7
+      internalID: 1370271082
       vertices: []
       indices: 
       edges: []
@@ -209,9 +230,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      trafficLight_black: 1891724189
       trafficLight_green: 1137909951
+      trafficLight_green_blink: -541666913
       trafficLight_red: -715496808
+      trafficLight_red_blink: 1370271082
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
