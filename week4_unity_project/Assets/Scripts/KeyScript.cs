@@ -11,8 +11,6 @@ public class KeyScript : MonoBehaviour
     {
         targetObj = null;
         
-    }
-
     void Awake(){
 
     }

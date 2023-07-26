@@ -9136,6 +9136,10 @@ PrefabInstance:
       propertyPath: cameraFollow
       value: 
       objectReference: {fileID: 519420033}
+    - target: {fileID: 5452701016652322612, guid: c08ad86d60cd7aa46be3d8eb73350271, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5918677064598075437, guid: c08ad86d60cd7aa46be3d8eb73350271, type: 3}
       propertyPath: m_Name
       value: nupjukBlue
@@ -9599,6 +9603,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1150083846309094457, guid: b49f3e40067476542b00b036f4027fba, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3996357975121809832, guid: b49f3e40067476542b00b036f4027fba, type: 3}
       propertyPath: m_RootOrder
       value: 5
