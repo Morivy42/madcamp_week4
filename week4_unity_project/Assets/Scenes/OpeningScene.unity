@@ -143,6 +143,10 @@ PrefabInstance:
       propertyPath: minY
       value: -4
       objectReference: {fileID: 0}
+    - target: {fileID: 2247416387368013207, guid: c08ad86d60cd7aa46be3d8eb73350271, type: 3}
+      propertyPath: message
+      value: 
+      objectReference: {fileID: 283780139}
     - target: {fileID: 5452701016652322612, guid: c08ad86d60cd7aa46be3d8eb73350271, type: 3}
       propertyPath: m_FlipX
       value: 1
@@ -200,6 +204,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c08ad86d60cd7aa46be3d8eb73350271, type: 3}
+--- !u!114 &283780139 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1943651919149757825, guid: c08ad86d60cd7aa46be3d8eb73350271, type: 3}
+  m_PrefabInstance: {fileID: 283780138}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &299367787
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,7 +366,7 @@ GameObject:
   - component: {fileID: 712491937}
   - component: {fileID: 712491936}
   - component: {fileID: 712491935}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1440,11 +1455,26 @@ PrefabInstance:
       propertyPath: minY
       value: -4
       objectReference: {fileID: 0}
+    - target: {fileID: 8790842240568998467, guid: b49f3e40067476542b00b036f4027fba, type: 3}
+      propertyPath: message
+      value: 
+      objectReference: {fileID: 1075430797}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b49f3e40067476542b00b036f4027fba, type: 3}
+--- !u!114 &1075430797 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7743955646035473151, guid: b49f3e40067476542b00b036f4027fba, type: 3}
+  m_PrefabInstance: {fileID: 1075430796}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1446257124
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1503,7 +1533,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7854847459136934218, guid: 609059d9792b5bd43ab7e5f95e444f63, type: 3}
       propertyPath: sceneName
-      value: Opening Scene
+      value: TutorialScene
       objectReference: {fileID: 0}
     - target: {fileID: 7854847459136934218, guid: 609059d9792b5bd43ab7e5f95e444f63, type: 3}
       propertyPath: nupjukBlue
