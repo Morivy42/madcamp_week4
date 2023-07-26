@@ -171,9 +171,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da47b44f2f08b284ea6143803df19429, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movingPlayers: []
   zeroBlockSprite: {fileID: -1907713516, guid: 61f697c60b5fc034bbbc905221e53e84, type: 3}
   oneBlockSprite: {fileID: -366604731, guid: 61f697c60b5fc034bbbc905221e53e84, type: 3}
   twoBlockSprite: {fileID: 727598349, guid: 61f697c60b5fc034bbbc905221e53e84, type: 3}
-  nupjukBlue: {fileID: 0}
-  nupjukPink: {fileID: 0}
+  nupjukBlue: {fileID: 5918677064598075437, guid: c08ad86d60cd7aa46be3d8eb73350271, type: 3}
+  nupjukPink: {fileID: 7925095884326108165, guid: b49f3e40067476542b00b036f4027fba, type: 3}
