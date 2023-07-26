@@ -9,12 +9,11 @@ public class KeyScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        targetObj = null;
     }
 
     void Awake(){
-        targetObj = null;
-
+        
     }
 
     // Update is called once per frame
@@ -26,7 +25,7 @@ public class KeyScript : MonoBehaviour
             targetObj = keyHit.collider.gameObject;
         }
         else if(keyHit2.collider!=null){    
-            targetObj = keyHit.collider.gameObject;
+            targetObj = keyHit2.collider.gameObject;
         }
         if(targetObj != null){
             taken = true;

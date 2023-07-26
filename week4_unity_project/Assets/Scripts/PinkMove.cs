@@ -216,7 +216,7 @@ public class PinkMove : MonoBehaviour
         }
         if (transform.position.y < minY)
         {
-            transform.Translate(0f, 15f, 0f);
+            transform.Translate(-3f, 15f, 0f);
         }
     }
 

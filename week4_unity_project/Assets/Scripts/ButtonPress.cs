@@ -15,7 +15,11 @@ public class ButtonPress : MonoBehaviour
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
-        floatMap.SetActive(false);
+        if(goodButton)
+            floatMap.SetActive(false);
+        else{
+            floatMap = null;
+        }
     }
 
     // Update is called once per frame

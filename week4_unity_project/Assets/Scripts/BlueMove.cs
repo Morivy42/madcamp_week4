@@ -135,10 +135,12 @@ public class BlueMove : MonoBehaviour
         }
 
         RaycastHit2D elevatorHit = Physics2D.Raycast(transform.position, Vector2.down, 1f, LayerMask.GetMask("floor"));
-        if((elevatorHit.collider!=null)&& elevatorHit.collider.CompareTag("Elevator")){
+        if ((elevatorHit.collider != null) && elevatorHit.collider.CompareTag("Elevator"))
+        {
             onElevator = true;
         }
-        else{
+        else
+        {
             onElevator = false;
         }
 
@@ -204,14 +206,21 @@ public class BlueMove : MonoBehaviour
                     anim.SetBool("isJumping", false);
             }
         }
-        if(transform.position.y<minY){
-            cameraFollow.SetCameraMoveEnabled(false);
-            transform.Translate(-3f, 15f, 0f);
-        }else if(transform.position.y>maxY){
-            cameraFollow.SetCameraMoveEnabled(false);
-        }
-        else{
-            cameraFollow.SetCameraMoveEnabled(true);
+        if (cameraFollow != null)
+        {
+            if (transform.position.y < minY)
+            {
+                cameraFollow.SetCameraMoveEnabled(false);
+                transform.Translate(-3f, 15f, 0f);
+            }
+            else if (transform.position.y > maxY)
+            {
+                cameraFollow.SetCameraMoveEnabled(false);
+            }
+            else
+            {
+                cameraFollow.SetCameraMoveEnabled(true);
+            }
         }
     }
 }

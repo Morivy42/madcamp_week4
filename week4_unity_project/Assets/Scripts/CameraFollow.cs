@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    private float cameraSpeed = 7.0f;
     public float minX = -4f;
     public float maxX = 100f;
     public float minY = 0f;
