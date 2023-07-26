@@ -9125,6 +9125,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2247416387368013207, guid: c08ad86d60cd7aa46be3d8eb73350271, type: 3}
+      propertyPath: maxY
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2247416387368013207, guid: c08ad86d60cd7aa46be3d8eb73350271, type: 3}
+      propertyPath: minY
+      value: -4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2247416387368013207, guid: c08ad86d60cd7aa46be3d8eb73350271, type: 3}
       propertyPath: cameraFollow
       value: 
       objectReference: {fileID: 519420033}
@@ -9638,6 +9646,14 @@ PrefabInstance:
     - target: {fileID: 7925095884326108165, guid: b49f3e40067476542b00b036f4027fba, type: 3}
       propertyPath: m_Name
       value: nupjukPink
+      objectReference: {fileID: 0}
+    - target: {fileID: 8790842240568998467, guid: b49f3e40067476542b00b036f4027fba, type: 3}
+      propertyPath: maxY
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8790842240568998467, guid: b49f3e40067476542b00b036f4027fba, type: 3}
+      propertyPath: minY
+      value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: 8790842240568998467, guid: b49f3e40067476542b00b036f4027fba, type: 3}
       propertyPath: nupjukBlue
