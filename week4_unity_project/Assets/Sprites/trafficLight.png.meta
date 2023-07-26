@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7cb889af1201c434ab55602d81402f85
+guid: 5817e4da05ecfde499729f1e6872ab06
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -110,7 +110,7 @@ TextureImporter:
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 50
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -136,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: KakaoTalk_20230721_094525118_0
+      name: trafficLight_green
       rect:
         serializedVersion: 2
         x: 0
-        y: 96
-        width: 96
-        height: 96
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3390aac00f0a6e54cb702e6108503de6
-      internalID: -1634717733
+      spriteID: 4758b0633c507964fba45ccbc77b1857
+      internalID: 1137909951
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KakaoTalk_20230721_094525118_1
+      name: trafficLight_red
       rect:
         serializedVersion: 2
-        x: 96
-        y: 96
-        width: 96
-        height: 96
+        x: 32
+        y: 32
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74d3ed9e876a809449b21d55fd9c86aa
-      internalID: -310644824
+      spriteID: 11e53a975962a1f42a52dd5596125166
+      internalID: -715496808
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KakaoTalk_20230721_094525118_2
+      name: trafficLight_green_blink
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 96
-        height: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,20 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 13110d69b5ffeec428593c7c6aa86b84
-      internalID: -1725720486
+      spriteID: 22030f54f6054854f9c2ab0d9e80fdcd
+      internalID: -541666913
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KakaoTalk_20230721_094525118_3
+      name: trafficLight_red_blink
       rect:
         serializedVersion: 2
-        x: 96
+        x: 32
         y: 0
-        width: 96
-        height: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,8 +213,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c18c122715680846977f2c29da86018
-      internalID: 1462583300
+      spriteID: 803c61149f33cb645895d6ee2108d4f7
+      internalID: 1370271082
       vertices: []
       indices: 
       edges: []
@@ -230,10 +230,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      KakaoTalk_20230721_094525118_0: -1634717733
-      KakaoTalk_20230721_094525118_1: -310644824
-      KakaoTalk_20230721_094525118_2: -1725720486
-      KakaoTalk_20230721_094525118_3: 1462583300
+      trafficLight_green: 1137909951
+      trafficLight_green_blink: -541666913
+      trafficLight_red: -715496808
+      trafficLight_red_blink: 1370271082
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

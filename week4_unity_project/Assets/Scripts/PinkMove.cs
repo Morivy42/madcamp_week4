@@ -177,6 +177,12 @@ public class PinkMove : MonoBehaviour
         // move
         Vector3 move = new Vector3(moveX, 0, 0);
         transform.position += move * moveSpeed * Time.deltaTime;
+         // 카메라를 벗어나지 않도록 범위 제한
+        Vector3 viewPosition = Camera.main.WorldToViewportPoint(transform.position);
+        viewPosition.x = Mathf.Clamp01(viewPosition.x);
+        viewPosition.y = Mathf.Clamp01(viewPosition.y);
+        Vector3 pos = Camera.main.ViewportToWorldPoint(viewPosition);
+        transform.position = pos;
 
         // flip
         if (moveX < 0)

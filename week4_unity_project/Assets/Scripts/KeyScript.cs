@@ -12,6 +12,11 @@ public class KeyScript : MonoBehaviour
         
     }
 
+    void Awake(){
+        targetObj = null;
+
+    }
+
     // Update is called once per frame
     void Update()
     {

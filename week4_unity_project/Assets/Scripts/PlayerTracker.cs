@@ -1,7 +1,12 @@
 using UnityEngine;
 
-public class MonsterChasePlayer : MonoBehaviour
+public class GooseChase : MonoBehaviour
 {
+    bool gooseHit = false;
+    bool blueHit = false;
+    bool pinkHit = false;
+    public GameObject nupjukPink;
+    public GameObject nupjukBlue;
     public Transform player;
     public float chaseSpeed = 5f;
     public float maxPlayerSpeed = 3f;
@@ -15,26 +20,59 @@ public class MonsterChasePlayer : MonoBehaviour
 
     private void Update()
     {
-        // 플레이어와 몬스터 사이의 거리를 계산합니다.
-        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-
-        // 플레이어의 평균 속도가 설정한 최대 속도를 넘을 경우 플레이어를 추적합니다.
-        if (player.GetComponent<Rigidbody2D>().velocity.magnitude > maxPlayerSpeed)
+        // 플레이어의 속도가 maxPlayerSpeed보다 크면
+        if (nupjukBlue.GetComponent<Rigidbody2D>().velocity.magnitude > maxPlayerSpeed)
         {
+            // 추적을 시작한다.
             isChasing = true;
+        }
+
+        // 추적 상태라면
+        if (isChasing)
+        {
+            // 플레이어를 향해 이동한다.
+            transform.position = Vector2.MoveTowards(transform.position, player.position, chaseSpeed * Time.deltaTime);
             anim.SetBool("isChasing", true);
-
-            // 플레이어의 위치를 향해 방향을 계산합니다.
-            Vector3 direction = (player.position - transform.position).normalized;
-
-            // 몬스터가 플레이어를 추적하도록 이동합니다.
-            transform.position += direction * chaseSpeed * Time.deltaTime;
-        } 
+        }
         else
         {
-            isChasing = false;
             anim.SetBool("isChasing", false);
+        }
+
+
+        if (!gooseHit)
+        {
+            RaycastHit2D raycastHit = Physics2D.Raycast(transform.position, transform.up, 10f, LayerMask.GetMask("bluePlayer", "pinkPlayer"));
+            if (raycastHit.collider != null)
+            {
+                gooseHit = true;
+                //layer 6: bluePlayer, 7: pinkPlayer
+                if (raycastHit.collider.gameObject.layer == 6)
+                {
+                    blueHit = true;
+                }
+                else if (raycastHit.collider.gameObject.layer == 7)
+                {
+                    pinkHit = true;
+                }
+            }
+        }
+
+        if (pinkHit)
+        {
+            // nupjukPink.GetComponent<PinkMove>().isAlive =false;
+            pinkHit = false;
+            isChasing = false;
+            // pinkSpriteRenderer.sprite = newPinkSprite;
+            
+        }
+        if (blueHit)
+        {
+            // nupjukBlue.GetComponent<BlueMove>().isAlive =false;
+            blueHit = false;
+            isChasing = false;
 
         }
+        
     }
 }
