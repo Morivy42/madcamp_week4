@@ -8,8 +8,11 @@ public class DoorScript : MonoBehaviour
     public GameObject nupjukBlue;
     public GameObject nupjukPink;
     public GameObject Key;
+    private GameObject keyOwner;
+    
     // scene 전환을 위한 변수
     [SerializeField] private string sceneName;
+
     private Renderer blueRenderer;
     private Renderer pinkRenderer;
     private bool isPlayersInactive = false;
@@ -27,6 +30,7 @@ public class DoorScript : MonoBehaviour
     void Update()
     {
         keyTaken = Key.GetComponent<KeyScript>().taken;
+        keyOwner = Key.GetComponent<KeyScript>().targetObj;
         if (keyTaken)
         {
             if (pinkRenderer.enabled == false && blueRenderer.enabled == false)
@@ -37,11 +41,18 @@ public class DoorScript : MonoBehaviour
 
             if (isPlayersInactive == false && (pinkRenderer.enabled != blueRenderer.enabled))
             {
-                if (Key.GetComponent<KeyScript>().targetObj.GetComponent<Renderer>().enabled == false)
+                if (keyOwner.GetComponent<Renderer>().enabled == false)
                 {
+                    Key.GetComponent<Renderer>().enabled = false;
                     isPlayersInactive = true;
                     inactiveTimer = 5f; // 카운트 시작 시 타이머 초기화
                 }
+            }
+            if(keyOwner.GetComponent<Renderer>().enabled){
+                Key.GetComponent<Renderer>().enabled = true;
+            }
+            else{
+                Key.GetComponent<Renderer>().enabled = false;
             }
             if (isPlayersInactive)
             {

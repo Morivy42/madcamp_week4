@@ -13,6 +13,7 @@ public class PinkMove : MonoBehaviour
     private Renderer objectRenderer;
     private Collider2D myCollider;
     public bool isMovingBlock = false;
+    public GameObject blockObject;
 
     public bool isAlive = true;
     public Sprite gameoverSprite;
@@ -24,6 +25,10 @@ public class PinkMove : MonoBehaviour
     private bool movingUp = true;
     public CameraFollow cameraFollow;
     private bool animStart = false;
+
+    public bool onElevator = false;
+    public float minY;
+    public float maxY;
 
     [SerializeField]
     private float moveSpeed = 5f;
@@ -97,8 +102,8 @@ public class PinkMove : MonoBehaviour
                 isAlive = true;
             }
         }
-        
-            
+
+
         if (animStart)
         {
             myCollider.isTrigger = true;
@@ -109,15 +114,17 @@ public class PinkMove : MonoBehaviour
                 if (Vector3.Distance(transform.position, endPos) > 0.3f)
                 {
                     transform.position = Vector3.MoveTowards(transform.position, endPos, gg_moveSpeed * Time.deltaTime);
-                }   
-                else{
+                }
+                else
+                {
                     movingUp = false;
                 }
             }
             else
             {
                 gg_moveSpeed = 1f;
-                if (Vector3.Distance(transform.position, startPos) > 0.1f){
+                if (Vector3.Distance(transform.position, startPos) > 0.1f)
+                {
                     transform.position = Vector3.MoveTowards(transform.position, startPos, gg_moveSpeed * Time.deltaTime);
                 }
                 else
@@ -127,6 +134,16 @@ public class PinkMove : MonoBehaviour
                     SceneManager.LoadScene(currentSceneIndex);
                 }
             }
+        }
+
+        RaycastHit2D elevatorHit = Physics2D.Raycast(transform.position, Vector2.down, 1f, LayerMask.GetMask("floor"));
+        if ((elevatorHit.collider != null) && elevatorHit.collider.CompareTag("Elevator"))
+        {
+            onElevator = true;
+        }
+        else
+        {
+            onElevator = false;
         }
 
 
@@ -144,6 +161,7 @@ public class PinkMove : MonoBehaviour
             if (blockHit.collider != null)
             {
                 isMovingBlock = true;
+                blockObject = blockHit.collider.gameObject;
             }
         }
         else if (objectRenderer.enabled && Input.GetKey(KeyCode.D))
@@ -153,6 +171,7 @@ public class PinkMove : MonoBehaviour
             if (blockHit.collider != null)
             {
                 isMovingBlock = true;
+                blockObject = blockHit.collider.gameObject;
             }
         }
         // move
@@ -195,7 +214,8 @@ public class PinkMove : MonoBehaviour
                     anim.SetBool("isJumping", false);
             }
         }
-        if(transform.position.y<-4.5f){
+        if (transform.position.y < minY)
+        {
             transform.Translate(0f, 15f, 0f);
         }
     }

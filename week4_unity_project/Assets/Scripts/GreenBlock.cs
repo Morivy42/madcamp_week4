@@ -5,11 +5,11 @@ using UnityEngine;
 public class GreenBlock : MonoBehaviour
 {
 
-    public List<GameObject> movingPlayers;
     public Sprite zeroBlockSprite;
     public Sprite oneBlockSprite;
-    public Sprite twoBlockSprite; //둘이서 한 칸짜리 블록 못 밀어서 의미 없을듯
+    public Sprite twoBlockSprite;
     private SpriteRenderer spriteRenderer;
+    private Rigidbody2D rb;
 
     public GameObject nupjukBlue;
     public GameObject nupjukPink;
@@ -20,37 +20,59 @@ public class GreenBlock : MonoBehaviour
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        if(spriteRenderer.sprite.name=="block_32_5"){
-            blockNum_init = 0;
+        switch (spriteRenderer.sprite.name)
+        {
+            case "block_32_5":
+            case "slidenblock64_1":
+                blockNum_init = 0;
+                break;
+            case "block_32_6":
+            case "slidenblock64_3":
+                blockNum_init = 1;
+                break;
+            case "block_32_7":
+            case "slidenblock64_5":
+                blockNum_init = 2;
+                break;
+            default:
+                break;
         }
-        else if(spriteRenderer.sprite.name=="block_32_6"){
-            blockNum_init = 1;
-        }
-        else if(spriteRenderer.sprite.name=="block_32_7"){
-            blockNum_init = 2;
-        }
+
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        rb.isKinematic = false;
         blockNum = blockNum_init;
+        bool bluePush = nupjukBlue.GetComponent<BlueMove>().isMovingBlock;
+        bool pinkPush = nupjukPink.GetComponent<PinkMove>().isMovingBlock;
 
-        if (nupjukBlue.GetComponent<BlueMove>().isMovingBlock&&(blockNum>0))
+        if (bluePush && (blockNum > 0))
         {
-            blockNum--;
+            GameObject blockObject = nupjukBlue.GetComponent<BlueMove>().blockObject;
+            if (blockObject == this.gameObject)
+                blockNum--;
         }
-        if(nupjukPink.GetComponent<PinkMove>().isMovingBlock&&(blockNum>0)){
-            blockNum--;
+        if (pinkPush && (blockNum > 0))
+        {
+            GameObject blockObject = nupjukPink.GetComponent<PinkMove>().blockObject;
+            if (blockObject == this.gameObject)
+                blockNum--;
         }
-
         SpriteRenderer blockSpriteRenderer = GetComponent<SpriteRenderer>();
         if (blockNum == 0)
         {
+            rb.isKinematic = false;
             blockSpriteRenderer.sprite = zeroBlockSprite;
         }
         else if (blockNum == 1)
         {
+            if (pinkPush || bluePush)
+            {
+                rb.isKinematic = true;
+            }
             blockSpriteRenderer.sprite = oneBlockSprite;
         }
         else if (blockNum == 2)

@@ -12,6 +12,7 @@ public class BlueMove : MonoBehaviour
     private Renderer objectRenderer;
     private Collider2D myCollider;
     public bool isMovingBlock = false;
+    public GameObject blockObject;
 
     public bool isAlive = true;
     public Sprite gameoverSprite;
@@ -23,6 +24,10 @@ public class BlueMove : MonoBehaviour
     private bool movingUp = true;
     public CameraFollow cameraFollow;
     private bool animStart = false;
+
+    public bool onElevator = false;
+    public float minY;
+    public float maxY;
 
     [SerializeField]
     private float moveSpeed = 5f;
@@ -129,6 +134,14 @@ public class BlueMove : MonoBehaviour
             }
         }
 
+        RaycastHit2D elevatorHit = Physics2D.Raycast(transform.position, Vector2.down, 1f, LayerMask.GetMask("floor"));
+        if((elevatorHit.collider!=null)&& elevatorHit.collider.CompareTag("Elevator")){
+            onElevator = true;
+        }
+        else{
+            onElevator = false;
+        }
+
     }
 
     void FixedUpdate()
@@ -142,6 +155,7 @@ public class BlueMove : MonoBehaviour
             if (blockHit.collider != null)
             {
                 isMovingBlock = true;
+                blockObject = blockHit.collider.gameObject;
             }
 
         }
@@ -152,6 +166,7 @@ public class BlueMove : MonoBehaviour
             if (blockHit.collider != null)
             {
                 isMovingBlock = true;
+                blockObject = blockHit.collider.gameObject;
             }
         }
 
@@ -189,10 +204,10 @@ public class BlueMove : MonoBehaviour
                     anim.SetBool("isJumping", false);
             }
         }
-        if(transform.position.y<-4.5f){
+        if(transform.position.y<minY){
             cameraFollow.SetCameraMoveEnabled(false);
             transform.Translate(-3f, 15f, 0f);
-        }else if(transform.position.y>4f){
+        }else if(transform.position.y>maxY){
             cameraFollow.SetCameraMoveEnabled(false);
         }
         else{

@@ -19,12 +19,10 @@ public class CameraFollow : MonoBehaviour
     {
         if (isCameraMoveEnabled)
         {
-
             float clampedX = Mathf.Clamp(player.transform.position.x, minX, maxX);
             float clampedY = Mathf.Clamp(player.transform.position.y, minY, maxY);
             Vector3 dir = new Vector3(clampedX-this.transform.position.x, clampedY-this.transform.position.y, 0f);
             transform.Translate(dir);
-
         }
     }
 
