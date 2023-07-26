@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class BlueMove : MonoBehaviour
 {
     public GameObject nupjukBlue;
+    public GameObject nupjukPink;
     Rigidbody2D rb;
     SpriteRenderer sr;
     Animator anim;
@@ -29,6 +31,10 @@ public class BlueMove : MonoBehaviour
     public float minY;
     public float maxY;
 
+    public TMP_Text message;
+    public GameObject canvasObject;
+    public GameObject whiteCanvas;
+
     [SerializeField]
     private float moveSpeed = 5f;
     private float jumpForce = 5f;
@@ -41,6 +47,8 @@ public class BlueMove : MonoBehaviour
         objectRenderer = rb.GetComponent<Renderer>();
         myCollider = GetComponent<Collider2D>();
         inactiveTimer = 1f;
+        canvasObject.SetActive(false);
+        whiteCanvas.SetActive(false);
     }
 
     private void Awake()
@@ -52,9 +60,12 @@ public class BlueMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!nupjukPink.GetComponent<PinkMove>().isAlive){
+            isAlive = false;
+        }
         bool isJumping = anim.GetBool("isJumping");
         // Jump        
-        if (((!isJumping) && objectRenderer.enabled) && Input.GetKeyDown(KeyCode.UpArrow))
+        if ((((!isJumping) && objectRenderer.enabled) && Input.GetKeyDown(KeyCode.UpArrow)) && isAlive)
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             anim.SetBool("isJumping", true);
@@ -63,7 +74,7 @@ public class BlueMove : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.right, doorDistance, LayerMask.GetMask("floor"));
         RaycastHit2D hit2 = Physics2D.Raycast(transform.position, Vector3.left, doorDistance, LayerMask.GetMask("floor"));
 
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        if (Input.GetKeyDown(KeyCode.DownArrow) && isAlive)
         {
             if (objectRenderer.enabled == false)
             {
@@ -86,7 +97,7 @@ public class BlueMove : MonoBehaviour
         }
 
         //game over 시 처리
-        if (!isAlive)
+        if ((!isAlive)&&(!animStart))
         {
             anim.enabled = false;
             sr.sprite = gameoverSprite;
@@ -97,7 +108,7 @@ public class BlueMove : MonoBehaviour
                 animStart = true;
                 startPos = transform.position;
                 endPos = startPos + Vector3.up * distance;
-                isAlive = true;
+                // isAlive = true;
             }
         }
 
@@ -150,7 +161,7 @@ public class BlueMove : MonoBehaviour
     {
         float moveX = 0f;
         isMovingBlock = false;
-        if (objectRenderer.enabled && Input.GetKey(KeyCode.LeftArrow))
+        if ((objectRenderer.enabled && Input.GetKey(KeyCode.LeftArrow)) && isAlive)
         {
             moveX = -1f;
             RaycastHit2D blockHit = Physics2D.Raycast(rb.position, Vector2.left, (float)0.6, LayerMask.GetMask("block"));
@@ -161,7 +172,7 @@ public class BlueMove : MonoBehaviour
             }
 
         }
-        else if (objectRenderer.enabled && Input.GetKey(KeyCode.RightArrow))
+        else if ((objectRenderer.enabled && Input.GetKey(KeyCode.RightArrow)) && isAlive)
         {
             moveX = 1f;
             RaycastHit2D blockHit = Physics2D.Raycast(rb.position, Vector2.right, (float)0.6, LayerMask.GetMask("block"));
@@ -171,7 +182,25 @@ public class BlueMove : MonoBehaviour
                 blockObject = blockHit.collider.gameObject;
             }
         }
-
+        if (isAlive)
+        {
+            if (Input.GetKey(KeyCode.Period))
+            {
+                message.text = "Go!";
+            }
+            else if (Input.GetKey(KeyCode.Slash))
+            {
+                message.text = "Stop!";
+            }
+            else if (Input.GetKey(KeyCode.Comma))
+            {
+                message.text = "Jump!";
+            }
+            else
+            {
+                message.text = "";
+            }
+        }
         // move
         Vector3 move = new Vector3(moveX, 0, 0);
         transform.position += move * moveSpeed * Time.deltaTime;
@@ -220,6 +249,22 @@ public class BlueMove : MonoBehaviour
             else
             {
                 cameraFollow.SetCameraMoveEnabled(true);
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (canvasObject.activeSelf)
+            {
+                Time.timeScale = 1f;
+                canvasObject.SetActive(false);
+                whiteCanvas.SetActive(false);
+            }
+            else
+            {
+                Time.timeScale = 0f;
+                canvasObject.SetActive(true);
+                whiteCanvas.SetActive(true);
             }
         }
     }

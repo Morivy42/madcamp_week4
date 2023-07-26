@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class PinkMove : MonoBehaviour
 {
@@ -30,6 +31,8 @@ public class PinkMove : MonoBehaviour
     public float minY;
     public float maxY;
 
+    public TMP_Text message;
+
     [SerializeField]
     private float moveSpeed = 5f;
     private float jumpForce = 5f;
@@ -54,9 +57,12 @@ public class PinkMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!nupjukBlue.GetComponent<BlueMove>().isAlive){
+            isAlive = false;
+        }
         bool isJumping = anim.GetBool("isJumping");
         // Jump        
-        if (((!isJumping) && objectRenderer.enabled) && Input.GetKeyDown(KeyCode.W))
+        if (((!isJumping) && objectRenderer.enabled) && Input.GetKeyDown(KeyCode.W)&&isAlive)
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
             anim.SetBool("isJumping", true);
@@ -65,7 +71,7 @@ public class PinkMove : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.right, doorDistance, LayerMask.GetMask("floor"));
         RaycastHit2D hit2 = Physics2D.Raycast(transform.position, Vector3.left, doorDistance, LayerMask.GetMask("floor"));
 
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S)&&isAlive)
         {
             if (objectRenderer.enabled == false)
             {
@@ -88,7 +94,7 @@ public class PinkMove : MonoBehaviour
         }
 
         //game over 시 처리
-        if (!isAlive)
+        if ((!isAlive) && (!animStart))
         {
             anim.enabled = false;
             sr.sprite = gameoverSprite;
@@ -99,7 +105,6 @@ public class PinkMove : MonoBehaviour
                 animStart = true;
                 startPos = transform.position;
                 endPos = startPos + Vector3.up * distance;
-                isAlive = true;
             }
         }
 
@@ -154,7 +159,7 @@ public class PinkMove : MonoBehaviour
         float moveX = 0f;
 
         isMovingBlock = false;
-        if (objectRenderer.enabled && Input.GetKey(KeyCode.A))
+        if (objectRenderer.enabled && Input.GetKey(KeyCode.A) && isAlive)
         {
             moveX = -1f;
             RaycastHit2D blockHit = Physics2D.Raycast(rb.position, Vector2.left, (float)0.6, LayerMask.GetMask("block"));
@@ -164,7 +169,7 @@ public class PinkMove : MonoBehaviour
                 blockObject = blockHit.collider.gameObject;
             }
         }
-        else if (objectRenderer.enabled && Input.GetKey(KeyCode.D))
+        else if (objectRenderer.enabled && Input.GetKey(KeyCode.D) && isAlive)
         {
             moveX = 1f;
             RaycastHit2D blockHit = Physics2D.Raycast(rb.position, Vector2.right, (float)0.6, LayerMask.GetMask("block"));
@@ -174,10 +179,29 @@ public class PinkMove : MonoBehaviour
                 blockObject = blockHit.collider.gameObject;
             }
         }
+        if (isAlive)
+        {
+            if (Input.GetKey(KeyCode.Q))
+            {
+                message.text = "Go!";
+            }
+            else if (Input.GetKey(KeyCode.E))
+            {
+                message.text = "Stop!";
+            }
+            else if (Input.GetKey(KeyCode.F))
+            {
+                message.text = "Jump!";
+            }
+            else
+            {
+                message.text = "";
+            }
+        }
         // move
         Vector3 move = new Vector3(moveX, 0, 0);
         transform.position += move * moveSpeed * Time.deltaTime;
-         // 카메라를 벗어나지 않도록 범위 제한
+        // 카메라를 벗어나지 않도록 범위 제한
         Vector3 viewPosition = Camera.main.WorldToViewportPoint(transform.position);
         viewPosition.x = Mathf.Clamp01(viewPosition.x);
         viewPosition.y = Mathf.Clamp01(viewPosition.y);
