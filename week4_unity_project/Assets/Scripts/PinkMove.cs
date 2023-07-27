@@ -201,10 +201,10 @@ public class PinkMove : MonoBehaviour
         // move
         Vector3 move = new Vector3(moveX, 0, 0);
         transform.position += move * moveSpeed * Time.deltaTime;
-        // 카메라를 벗어나지 않도록 범위 제한
+        //카메라를 벗어나지 않도록 범위 제한
         Vector3 viewPosition = Camera.main.WorldToViewportPoint(transform.position);
-        viewPosition.x = Mathf.Clamp01(viewPosition.x);
-        viewPosition.y = Mathf.Clamp01(viewPosition.y);
+        viewPosition.x = Mathf.Clamp(viewPosition.x, 0.1f, 0.9f);
+        // viewPosition.y = Mathf.Clamp(viewPosition.y, 0.1f, 0.9f);
         Vector3 pos = Camera.main.ViewportToWorldPoint(viewPosition);
         transform.position = pos;
 
@@ -244,7 +244,8 @@ public class PinkMove : MonoBehaviour
         Vector3 maxWorldPos = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, 0));
         if (transform.position.y < minWorldPos.y)
         {
-            transform.Translate(-3f, 15f, 0f);
+            // transform.Translate(-3f, 15f, 0f);
+            transform.position = new Vector3(transform.position.x, maxWorldPos.y, transform.position.z);
         }
     }
 
