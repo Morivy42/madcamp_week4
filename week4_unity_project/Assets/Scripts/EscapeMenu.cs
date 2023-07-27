@@ -33,4 +33,11 @@ public class EscapeMenu : MonoBehaviour
         whiteCanvas.SetActive(false);
         gameObject.SetActive(false);
     }
+
+    public void RestartGame(){
+        EventSystem.current.SetSelectedGameObject(null);
+        Time.timeScale = 1f;
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex);
+    }
 }

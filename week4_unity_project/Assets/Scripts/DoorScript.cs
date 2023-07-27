@@ -9,6 +9,7 @@ public class DoorScript : MonoBehaviour
     public GameObject nupjukPink;
     public GameObject Key = null;
     private GameObject keyOwner;
+    private GameObject clearCanvas;
 
     // scene 전환을 위한 변수
     [SerializeField] private string sceneName;
@@ -24,6 +25,8 @@ public class DoorScript : MonoBehaviour
     {
         blueRenderer = nupjukBlue.GetComponent<Renderer>();
         pinkRenderer = nupjukPink.GetComponent<Renderer>();
+        clearCanvas = GameObject.Find("clearCanvas");
+        clearCanvas.SetActive(false);
     }
 
     // Update is called once per frame
@@ -38,12 +41,13 @@ public class DoorScript : MonoBehaviour
                 if (pinkRenderer.enabled == false && blueRenderer.enabled == false)
                 {
                     isPlayersInactive = false;
-                    Debug.Log("Log");
-                Debug.Log(SceneManager.GetActiveScene().name);
-                PlayerPrefs.SetString(SceneManager.GetActiveScene().name, "cleared");
-                PlayerPrefs.Save();
-                Debug.Log(PlayerPrefs.GetString(SceneManager.GetActiveScene().name));
-                    SceneManager.LoadScene(sceneName);
+                    // Debug.Log("Log");
+                    // Debug.Log(SceneManager.GetActiveScene().name);
+                    PlayerPrefs.SetString(SceneManager.GetActiveScene().name, "cleared");
+                    PlayerPrefs.Save();
+                    // Debug.Log(PlayerPrefs.GetString(SceneManager.GetActiveScene().name));
+                    clearCanvas.SetActive(true);
+                    Invoke("SceneChange", 2f);
                 }
 
                 if (isPlayersInactive == false && (pinkRenderer.enabled != blueRenderer.enabled))
@@ -55,30 +59,27 @@ public class DoorScript : MonoBehaviour
                         inactiveTimer = 5f; // 카운트 시작 시 타이머 초기화
                     }
                 }
-                if (keyOwner.GetComponent<Renderer>().enabled)
-                {
-                    Key.GetComponent<Renderer>().enabled = true;
-                    isPlayersInactive = false;
-                    inactiveTimer = 5f;
-                }
-                else
-                {
-                    Key.GetComponent<Renderer>().enabled = false;
-                }
                 if (isPlayersInactive)
                 {
-                    // 타이머 감소
-                    inactiveTimer -= Time.deltaTime;
-
-                    if (inactiveTimer <= 0f)
+                    if (keyOwner.GetComponent<Renderer>().enabled)
                     {
-                        // 5초가 끝나면 씬 이동
-                        Debug.Log("Log");
-                Debug.Log(SceneManager.GetActiveScene().name);
-                PlayerPrefs.SetString(SceneManager.GetActiveScene().name, "cleared");
-                PlayerPrefs.Save();
-                Debug.Log(PlayerPrefs.GetString(SceneManager.GetActiveScene().name));
-                        SceneManager.LoadScene(sceneName);
+                        Key.GetComponent<Renderer>().enabled = true;
+                        isPlayersInactive = false;
+                        inactiveTimer = 5f;
+                    }
+                    else
+                    {
+                        // 타이머 감소
+                        inactiveTimer -= Time.deltaTime;
+                        if (inactiveTimer <= 0f)
+                        {
+                            // 5초가 끝나면 씬 이동
+                            PlayerPrefs.SetString(SceneManager.GetActiveScene().name, "cleared");
+                            PlayerPrefs.Save();
+                            // Debug.Log(PlayerPrefs.GetString(SceneManager.GetActiveScene().name));
+                            clearCanvas.SetActive(true);
+                            Invoke("SceneChange", 2f);
+                        }
                     }
                 }
             }
@@ -89,8 +90,6 @@ public class DoorScript : MonoBehaviour
             {
                 isPlayersInactive = false;
                 // 현재 씬의 이름을 저장
-                Debug.Log("Log");
-                Debug.Log(SceneManager.GetActiveScene().name);
                 PlayerPrefs.SetString(SceneManager.GetActiveScene().name, "cleared");
                 PlayerPrefs.Save();
                 Debug.Log(PlayerPrefs.GetString(SceneManager.GetActiveScene().name));
@@ -117,5 +116,10 @@ public class DoorScript : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void SceneChange()
+    {
+        SceneManager.LoadScene(sceneName);
     }
 }
