@@ -46,7 +46,7 @@ public class DontWakeGoose : MonoBehaviour
         {
             isSleeping = false;
             animator.SetBool("isSleeping", false);
-            if (keyCount > 150)
+            if (keyCount > 200)
             {
                 isChasing = true;
             }

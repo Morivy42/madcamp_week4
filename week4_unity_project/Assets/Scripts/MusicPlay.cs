@@ -29,7 +29,7 @@ public class NewBehaviourScript : MonoBehaviour
         if((clearCanvas!=null)&&clearCanvas.activeSelf){
             audioSource.Pause();
         }
-        if (escMenu.activeSelf)
+        if ((escMenu!=null)&&escMenu.activeSelf)
         {
             audioSource.volume = 0.3f;
         }

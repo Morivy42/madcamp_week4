@@ -128,7 +128,9 @@ public class PinkMove : MonoBehaviour
             else
             {
                 gg_moveSpeed = 1f;
-                if (Vector3.Distance(transform.position, startPos) > 0.1f)
+                Vector3 viewPosition = Camera.main.WorldToViewportPoint(transform.position);
+                Vector3 minPosition = new Vector3(startPos.x, viewPosition.y, startPos.z);
+                if (Vector3.Distance(transform.position, minPosition) > 0.1f)
                 {
                     transform.position = Vector3.MoveTowards(transform.position, startPos, gg_moveSpeed * Time.deltaTime);
                 }
