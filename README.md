@@ -1,7 +1,10 @@
-# 몰입캠프 4주차 - Unity로 만드는 2인 퍼즐 플랫포머게임
+# 몰입캠프 4주차 - Unity로 만드는 2인 협동 퍼즐 플랫포머게임
 
 
-A brief description of what this project does and who it's for
+몰입캠프 4주차 
+  - Unity로 만든 2인 협동 퍼즐 플랫포머게임입니다.
+  - 피코파크와 유사한 게임입니다. PICO PARK like game
+
 <p>
 <img src="https://github.com/Morivy42/madcamp_week4/blob/main/week4_unity_project/Screenshots/Title.png" width = 50%">
 </p>
@@ -61,7 +64,7 @@ Unity 2022.3.4f1으로 빌드
 - 두 플레이어가 모두 들어가거나 열쇠를 든 플레이어가 문에 들어간 후 5초 뒤에 클리어됩니다.
 
 #### 7. 엘리베이터
-<img src="https://github.com/Morivy42/madcamp_week4/blob/main/week4_unity_project/Screenshots/Button.png" width="20%">
+<img src="https://github.com/Morivy42/madcamp_week4/blob/main/week4_unity_project/Screenshots/Elevator.png" width="20%">
 - 자동으로 움직이는 엘리베이터라면 타이밍에 맞춰서 타면 됩니다.
 - 숫자가 쓰여져 있다면 쓰여진 숫자만큼의 플레이어가 탑승해야 합니다.
 
