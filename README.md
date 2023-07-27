@@ -78,7 +78,7 @@ Unity 2022.3.4f1으로 빌드
 - 빨간불에 행동을 하면 게임 오버
 
 ## Level 1: Block Map 1
-사진
+<img src="https://github.com/Morivy42/madcamp_week4/blob/main/week4_unity_project/Screenshots/Level1.png" width="33%">
 
 #### 레벨 설명
 - 다양한 블록들을 밀고 협동을 하며 맵을 클리어 할 수 있습니다.
@@ -88,7 +88,8 @@ Unity 2022.3.4f1으로 빌드
 
 
 ## Level 2: Block Map 2
-사진
+
+<img src="https://github.com/Morivy42/madcamp_week4/blob/main/week4_unity_project/Screenshots/Level2-1.png" width="33%">
 
 #### 레벨 설명
 - 다양한 블록들을 밀고 협동을 하며 맵을 클리어 할 수 있습니다.
@@ -98,7 +99,7 @@ Unity 2022.3.4f1으로 빌드
 
 
 ## Level 3: Goose Map
-사진
+<img src="https://github.com/Morivy42/madcamp_week4/blob/main/week4_unity_project/Screenshots/Goose.png" width="33%">
 
 #### 레벨 설명
 - 잠자는 거위를 깨우지 않고 열쇠를 가지고 문에 무사히 도착해야 합니다.
@@ -107,7 +108,7 @@ Unity 2022.3.4f1으로 빌드
 - 거위, 열쇠
 
 ## Level 4: Traffic Light Map
-사진
+<img src="https://github.com/Morivy42/madcamp_week4/blob/main/week4_unity_project/Screenshots/Level2.png" width="33%">
 
 #### 레벨 설명
 - 신호를 위반하지 않고 열쇠를 가지고 문에 도착해야 합니다.
