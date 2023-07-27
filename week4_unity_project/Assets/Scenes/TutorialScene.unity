@@ -613,6 +613,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Raser1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2171921756765546153, guid: a7a469a8ea807ab4db2a34473152cb98, type: 3}
+      propertyPath: nupjukBlue
+      value: 
+      objectReference: {fileID: 1341783450}
+    - target: {fileID: 2171921756765546153, guid: a7a469a8ea807ab4db2a34473152cb98, type: 3}
+      propertyPath: nupjukPink
+      value: 
+      objectReference: {fileID: 1831541636}
     - target: {fileID: 5202051683311899250, guid: a7a469a8ea807ab4db2a34473152cb98, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -764,7 +772,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2247416387368013207, guid: c08ad86d60cd7aa46be3d8eb73350271, type: 3}
       propertyPath: minY
-      value: -2
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 2247416387368013207, guid: c08ad86d60cd7aa46be3d8eb73350271, type: 3}
       propertyPath: message
@@ -782,6 +790,10 @@ PrefabInstance:
       propertyPath: canvasObject
       value: 
       objectReference: {fileID: 1563425077}
+    - target: {fileID: 5452701016652322612, guid: c08ad86d60cd7aa46be3d8eb73350271, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5918677064598075437, guid: c08ad86d60cd7aa46be3d8eb73350271, type: 3}
       propertyPath: m_Name
       value: nupjukBlue
@@ -792,11 +804,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8138835035608420077, guid: c08ad86d60cd7aa46be3d8eb73350271, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.62
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8138835035608420077, guid: c08ad86d60cd7aa46be3d8eb73350271, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.66
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8138835035608420077, guid: c08ad86d60cd7aa46be3d8eb73350271, type: 3}
       propertyPath: m_LocalPosition.z
@@ -817,6 +829,14 @@ PrefabInstance:
     - target: {fileID: 8138835035608420077, guid: c08ad86d60cd7aa46be3d8eb73350271, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8138835035608420077, guid: c08ad86d60cd7aa46be3d8eb73350271, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -6.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8138835035608420077, guid: c08ad86d60cd7aa46be3d8eb73350271, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.64
       objectReference: {fileID: 0}
     - target: {fileID: 8138835035608420077, guid: c08ad86d60cd7aa46be3d8eb73350271, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3680,7 +3700,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8790842240568998467, guid: b49f3e40067476542b00b036f4027fba, type: 3}
       propertyPath: minY
-      value: -2
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 8790842240568998467, guid: b49f3e40067476542b00b036f4027fba, type: 3}
       propertyPath: message
