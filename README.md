@@ -53,29 +53,39 @@ Unity 2022.3.4f1으로 빌드
 - 레이저에 닿으면 게임오버!
 
 #### 5. 버튼
-<img src="https://github.com/Morivy42/madcamp_week4/blob/main/week4_unity_project/Screenshots/Glass_block.png" width="33%">
+<img src="https://github.com/Morivy42/madcamp_week4/blob/main/week4_unity_project/Screenshots/Button.png" width="33%">
 - 버튼을 누르면 이벤트가 일어납니다.
 - Don't Push가 쓰여 있다면 누르지 마세요.
 
 #### 6. 열쇠
-<img src="https://github.com/Morivy42/madcamp_week4/issues/new" width="33%">
+<img src="https://github.com/Morivy42/madcamp_week4/blob/main/week4_unity_project/Screenshots/Key.png" width="33%">
 - 열쇠를 들고 문을 열어야 문을 열 수 있습니다.
 - 두 플레이어가 모두 들어가거나 열쇠를 든 플레이어가 문에 들어간 후 5초 뒤에 클리어됩니다.
 
 #### 7. 엘리베이터
-<img src="https://github.com/Morivy42/madcamp_week4/issues/new" width="33%">
+<img src="https://github.com/Morivy42/madcamp_week4/blob/main/week4_unity_project/Screenshots/Button.png" width="33%">
 - 자동으로 움직이는 엘리베이터라면 타이밍에 맞춰서 타면 됩니다.
 - 숫자가 쓰여져 있다면 쓰여진 숫자만큼의 플레이어가 탑승해야 합니다.
 
 #### 8. 거위
-<img src="https://github.com/Morivy42/madcamp_week4/issues/new" width="33%">
+<img src="https://github.com/Morivy42/madcamp_week4/blob/main/week4_unity_project/Screenshots/Goose.png" width="33%">
 - 시끄럽게 하면 거위가 따라옵니다.
 - 거위와 닿으면 게임오버되니 천천히 조절하며 가야합니다.
 
 #### 9. 신호등
-<img src="https://github.com/Morivy42/madcamp_week4/issues/new" width="33%">
+<img src="https://github.com/Morivy42/madcamp_week4/blob/main/week4_unity_project/Screenshots/TrafficLight.png" width="33%">
 - 신호등에 맞춰 걸어야합니다.
 - 빨간불에 행동을 하면 게임 오버
+
+## Level 0: Tutorial
+사진
+
+#### 레벨 설명
+- 조작법을 익히고 게임과 친해지는 레벨입니다.
+
+#### 게임 오브젝트
+- 
+
 
 ## Level 1: Block Map 1
 <img src="https://github.com/Morivy42/madcamp_week4/blob/main/week4_unity_project/Screenshots/Level1.png" width="33%">
