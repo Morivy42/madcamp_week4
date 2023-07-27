@@ -238,7 +238,11 @@ public class PinkMove : MonoBehaviour
                     anim.SetBool("isJumping", false);
             }
         }
-        if (transform.position.y < minY)
+
+        // 화면 최대 최소 값 좌표 구하기
+        Vector3 minWorldPos = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0));
+        Vector3 maxWorldPos = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, 0));
+        if (transform.position.y < minWorldPos.y)
         {
             transform.Translate(-3f, 15f, 0f);
         }
