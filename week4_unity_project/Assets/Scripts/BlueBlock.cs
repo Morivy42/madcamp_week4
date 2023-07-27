@@ -17,7 +17,8 @@ public class BlueBlock : MonoBehaviour
     void Update()
     {
         rb.isKinematic = false;
-        if(nupjukPink.GetComponent<PinkMove>().isMovingBlock){
+        if((nupjukPink.GetComponent<PinkMove>().blockObject == this.gameObject)&&nupjukPink.GetComponent<PinkMove>().isMovingBlock)
+        {
             rb.isKinematic = true;
         }
     }

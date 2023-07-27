@@ -7,6 +7,7 @@ public class PinkBlock : MonoBehaviour
     //파란 넙죽이가 미는 거 막기
     private Rigidbody2D rb;
     public GameObject nupjukBlue;
+    public
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,7 @@ public class PinkBlock : MonoBehaviour
     void Update()
     {
         rb.isKinematic = false;
-        if (nupjukBlue.GetComponent<BlueMove>().isMovingBlock)
+        if ((nupjukBlue.GetComponent<BlueMove>().blockObject == this.gameObject)&&nupjukBlue.GetComponent<BlueMove>().isMovingBlock)
         {
             rb.isKinematic = true;
         }
