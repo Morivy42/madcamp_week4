@@ -235,14 +235,28 @@ public class BlueMove : MonoBehaviour
                     anim.SetBool("isJumping", false);
             }
         }
+
+        // 카메라 밖으로 이동하지 못하게 하는 코드
+        // Vector3 viewPosition = Camera.main.WorldToViewportPoint(transform.position);
+        // viewPosition.x = Mathf.Clamp01(viewPosition.x);
+        // viewPosition.y = Mathf.Clamp01(viewPosition.y);
+        // Vector3 pos = Camera.main.ViewportToWorldPoint(viewPosition);
+        // transform.position = pos;
+
+        Vector3 viewPosition = Camera.main.WorldToViewportPoint(transform.position);
+        
+        // 화면 최대 최소 값 좌표 구하기
+        Vector3 minWorldPos = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0));
+        Vector3 maxWorldPos = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, 0));
+
         if (cameraFollow != null)
         {
-            if (transform.position.y < minY)
+            if (transform.position.y < minWorldPos.y)
             {
                 cameraFollow.SetCameraMoveEnabled(false);
                 transform.Translate(-3f, 15f, 0f);
             }
-            else if (transform.position.y > maxY)
+            else if (transform.position.y > maxWorldPos.y)
             {
                 cameraFollow.SetCameraMoveEnabled(false);
             }

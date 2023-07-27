@@ -18,6 +18,10 @@ public class Title : MonoBehaviour
     public void SelectLevel(string SceneToLoad)
     {
         Debug.Log(SceneToLoad);
-        SceneManager.LoadScene(SceneToLoad);
+        // last character of SceneToLoad is the stage number
+        PlayerPrefs.SetInt("Level", SceneToLoad[SceneToLoad.Length - 1] - '0');
+        // SceneManager.LoadScene(SceneToLoad);
+        Debug.Log("SceneToLoad: " + SceneToLoad);
+        LoadingSceneManager.LoadScene(SceneToLoad);
     }
 }

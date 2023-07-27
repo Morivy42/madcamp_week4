@@ -21,8 +21,10 @@ public class redLight : MonoBehaviour
         if (redLightOn) 
         {
             // 키 입력이 있는지 확인
-            if (Input.anyKey)
+            if (Input.GetAxis("redLightHorizontal") != 0 || Input.GetAxis("redLightVertical") != 0)
             {
+                
+                Debug.Log("Game Over");
                 player.GetComponent<BlueMove>().isAlive =false;
                 player2.GetComponent<PinkMove>().isAlive =false;
             }
