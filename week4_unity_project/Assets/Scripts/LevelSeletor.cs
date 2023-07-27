@@ -9,14 +9,15 @@ public class Title : MonoBehaviour
    
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            SelectLevel();
-        }
+        // if (Input.GetMouseButtonDown(0))
+        // {
+        //     SelectLevel();
+        // }
     }   
 
-    void SelectLevel()
+    public void SelectLevel(string SceneToLoad)
     {
+        Debug.Log(SceneToLoad);
         SceneManager.LoadScene(SceneToLoad);
     }
 }

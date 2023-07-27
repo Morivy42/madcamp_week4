@@ -38,6 +38,11 @@ public class DoorScript : MonoBehaviour
                 if (pinkRenderer.enabled == false && blueRenderer.enabled == false)
                 {
                     isPlayersInactive = false;
+                    Debug.Log("Log");
+                Debug.Log(SceneManager.GetActiveScene().name);
+                PlayerPrefs.SetString(SceneManager.GetActiveScene().name, "cleared");
+                PlayerPrefs.Save();
+                Debug.Log(PlayerPrefs.GetString(SceneManager.GetActiveScene().name));
                     SceneManager.LoadScene(sceneName);
                 }
 
@@ -68,6 +73,11 @@ public class DoorScript : MonoBehaviour
                     if (inactiveTimer <= 0f)
                     {
                         // 5초가 끝나면 씬 이동
+                        Debug.Log("Log");
+                Debug.Log(SceneManager.GetActiveScene().name);
+                PlayerPrefs.SetString(SceneManager.GetActiveScene().name, "cleared");
+                PlayerPrefs.Save();
+                Debug.Log(PlayerPrefs.GetString(SceneManager.GetActiveScene().name));
                         SceneManager.LoadScene(sceneName);
                     }
                 }
@@ -78,6 +88,12 @@ public class DoorScript : MonoBehaviour
             if (pinkRenderer.enabled == false && blueRenderer.enabled == false)
             {
                 isPlayersInactive = false;
+                // 현재 씬의 이름을 저장
+                Debug.Log("Log");
+                Debug.Log(SceneManager.GetActiveScene().name);
+                PlayerPrefs.SetString(SceneManager.GetActiveScene().name, "cleared");
+                PlayerPrefs.Save();
+                Debug.Log(PlayerPrefs.GetString(SceneManager.GetActiveScene().name));
                 SceneManager.LoadScene(sceneName);
             }
 
@@ -95,6 +111,8 @@ public class DoorScript : MonoBehaviour
                 if (inactiveTimer <= 0f)
                 {
                     // 5초가 끝나면 씬 이동
+                    PlayerPrefs.SetString(SceneManager.GetActiveScene().name, "cleared");
+                    PlayerPrefs.Save();
                     SceneManager.LoadScene(sceneName);
                 }
             }
