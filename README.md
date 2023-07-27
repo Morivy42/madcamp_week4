@@ -2,12 +2,13 @@
 
 
 A brief description of what this project does and who it's for
+
 <img src="https://github.com/Morivy42/madcamp_week4/blob/main/week4_unity_project/Screenshots/Title.png" width = 50%">
 
 ## Authors
 
-- [@김혜연](https://github.com/fairykhy)
-- [@모지훈](https://github.com/Morivy42)
+- KAIST 전산학부 [김혜연](https://github.com/fairykhy)
+- KAIST 전산학부 [모지훈](https://github.com/Morivy42)
 
 ## 다운로드
 
