@@ -724,7 +724,7 @@ PrefabInstance:
       objectReference: {fileID: 1484846776}
     - target: {fileID: 7854847459136934218, guid: 609059d9792b5bd43ab7e5f95e444f63, type: 3}
       propertyPath: sceneName
-      value: Map1
+      value: LevelSelect
       objectReference: {fileID: 0}
     - target: {fileID: 7854847459136934218, guid: 609059d9792b5bd43ab7e5f95e444f63, type: 3}
       propertyPath: nupjukBlue
@@ -1188,6 +1188,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7099738472520467461, guid: 4176de52beb69234d869933272685a9e, type: 3}
+      propertyPath: whiteCanvas
+      value: 
+      objectReference: {fileID: 1342115318}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
