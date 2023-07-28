@@ -10,6 +10,7 @@ public class EndingControl : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        PlayerPrefs.SetString("theEnd", "true");
     }
 
     // Update is called once per frame
